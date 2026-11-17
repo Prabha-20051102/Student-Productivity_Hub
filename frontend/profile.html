@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile - Student Productivity Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon">🎓</div>
+        <div class="brand-text">
+          <h2>Student Hub</h2>
+          <p>Productivity Suite</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-label">Main Menu</div>
+        <a href="dashboard.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+          Dashboard
+        </a>
+        <a href="tasks.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+          My Tasks
+        </a>
+        <a href="timetable.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+          Timetable
+        </a>
+        <a href="assignments.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+          Assignments
+        </a>
+        <a href="progress.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+          Study Progress
+        </a>
+        <a href="pomodoro.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Pomodoro Timer
+        </a>
+        <div class="nav-label">Settings</div>
+        <a href="profile.html" class="nav-link active">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+          My Profile
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="logout-btn">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:20px;height:20px;"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="top-header">
+        <div class="header-left">
+          <button id="menuToggle" class="menu-toggle-btn" aria-label="Toggle Menu">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:24px;height:24px;"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+          <h1 class="page-title">My Profile & Account</h1>
+        </div>
+
+        <div class="header-right">
+          <div class="current-date">
+            <span>📅</span>
+            <span id="currentDateText">Loading date...</span>
+          </div>
+          <a href="profile.html" class="user-profile-badge">
+            <div id="headerAvatar" class="user-avatar">S</div>
+            <div class="user-meta">
+              <div id="headerUserName" class="user-name">Student</div>
+              <div id="headerUserRole" class="user-role">Student</div>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <main class="page-container">
+
+        <!-- Notification Banner -->
+        <div id="profileAlert" class="alert alert-success" style="display: none;"></div>
+
+        <!-- Student Info Header Card -->
+        <div class="card">
+          <div class="card-body" style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
+            <div id="profileBigAvatar" class="brand-icon" style="width: 72px; height: 72px; font-size: 32px; border-radius: var(--radius-lg);">
+              S
+            </div>
+            <div>
+              <h2 id="profileDisplayName" style="font-size: 22px; font-weight: 700; color: var(--text-primary);">Student Name</h2>
+              <p id="profileDisplayEmail" style="color: var(--text-muted); font-size: 14px;">student@college.edu</p>
+              <div style="display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap;">
+                <span id="profileDisplayDept" class="badge" style="background: #eef2ff; color: #4338ca;">Department</span>
+                <span id="profileDisplaySem" class="badge" style="background: #ecfdf5; color: #047857;">Semester</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Edit Profile Form -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <span>👤</span> Edit Personal Information
+            </h2>
+          </div>
+          <div class="card-body">
+            <form id="profileForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="profileName">Full Name *</label>
+                  <input type="text" id="profileName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="profileEmail">Email Address (Read Only)</label>
+                  <input type="email" id="profileEmail" class="form-control" disabled style="background-color: #f1f5f9; cursor: not-allowed;">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="profileDepartment">Department / Major</label>
+                  <input type="text" id="profileDepartment" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="profileSemester">Semester / Year</label>
+                  <input type="text" id="profileSemester" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="profileStudentId">Student ID / Roll Number</label>
+                <input type="text" id="profileStudentId" class="form-control">
+              </div>
+
+              <hr style="margin: 24px 0; border: none; border-top: 1px solid var(--card-border);">
+
+              <h3 style="font-size: 15px; font-weight: 700; margin-bottom: 16px; color: var(--text-primary);">Change Password (Optional)</h3>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="currentPassword">Current Password</label>
+                  <input type="password" id="currentPassword" class="form-control" placeholder="••••••••">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="newPassword">New Password (min 6 characters)</label>
+                  <input type="password" id="newPassword" class="form-control" placeholder="••••••••" minlength="6">
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 12px;">
+                <button type="submit" id="saveProfileBtn" class="btn btn-primary">
+                  Save Changes
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Account Actions Card -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">
+              <span>🔒</span> Account Security & Session
+            </h2>
+          </div>
+          <div class="card-body" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+            <div>
+              <strong style="color: var(--text-primary); font-size: 14px;">Sign Out of All Sessions</strong>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 2px;">End your current active browser session safely.</p>
+            </div>
+            <button class="btn btn-danger logout-btn">
+              Logout Account
+            </button>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

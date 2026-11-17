@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Student Productivity Hub - Responsive Stylesheet
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 230px;
+  }
+
+  .page-container {
+    padding: 24px;
+  }
+
+  .top-header {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .main-wrapper {
+    margin-left: 0;
+  }
+
+  .menu-toggle-btn {
+    display: inline-block;
+  }
+
+  .top-header {
+    padding: 0 16px;
+  }
+
+  .page-container {
+    padding: 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .welcome-hero {
+    padding: 24px 20px;
+  }
+
+  .welcome-hero h1 {
+    font-size: 22px;
+  }
+
+  .welcome-hero .quick-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .card-header .btn {
+    width: 100%;
+  }
+
+  .custom-table th,
+  .custom-table td {
+    padding: 12px;
+  }
+
+  .user-role {
+    display: none;
+  }
+
+  .current-date {
+    display: none;
+  }
+}
+
+/* Sidebar overlay for mobile */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.5);
+  z-index: 95;
+}
+
+.sidebar-overlay.active {
+  display: block;
+}

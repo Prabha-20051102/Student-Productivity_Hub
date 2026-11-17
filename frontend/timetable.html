@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timetable - Student Productivity Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon">🎓</div>
+        <div class="brand-text">
+          <h2>Student Hub</h2>
+          <p>Productivity Suite</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-label">Main Menu</div>
+        <a href="dashboard.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+          Dashboard
+        </a>
+        <a href="tasks.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+          My Tasks
+        </a>
+        <a href="timetable.html" class="nav-link active">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+          Timetable
+        </a>
+        <a href="assignments.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+          Assignments
+        </a>
+        <a href="progress.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+          Study Progress
+        </a>
+        <a href="pomodoro.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Pomodoro Timer
+        </a>
+        <div class="nav-label">Settings</div>
+        <a href="profile.html" class="nav-link">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+          My Profile
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="logout-btn">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:20px;height:20px;"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="top-header">
+        <div class="header-left">
+          <button id="menuToggle" class="menu-toggle-btn" aria-label="Toggle Menu">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:24px;height:24px;"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+          <h1 class="page-title">Weekly Timetable</h1>
+        </div>
+
+        <div class="header-right">
+          <div class="current-date">
+            <span>📅</span>
+            <span id="currentDateText">Loading date...</span>
+          </div>
+          <a href="profile.html" class="user-profile-badge">
+            <div id="headerAvatar" class="user-avatar">S</div>
+            <div class="user-meta">
+              <div id="headerUserName" class="user-name">Student</div>
+              <div id="headerUserRole" class="user-role">Student</div>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <main class="page-container">
+        
+        <!-- Action Header -->
+        <div class="card">
+          <div class="card-body" style="padding: 20px;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px;">
+              <div>
+                <h2 style="font-size: 18px; font-weight: 700; color: var(--text-primary);">Weekly Class & Study Schedule</h2>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 2px;">Manage your lecture periods, lab sessions, and independent study blocks.</p>
+              </div>
+              <button id="openAddSlotBtn" class="btn btn-primary">
+                <span>+</span> Add Timetable Slot
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timetable Days Tabs / Grid View -->
+        <div class="card">
+          <div class="card-header" style="flex-wrap: wrap; gap: 10px;">
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="dayFilterTabs">
+              <button class="btn btn-primary btn-sm day-tab active" data-day="All">All Days</button>
+              <button class="btn btn-secondary btn-sm day-tab" data-day="Monday">Monday</button>
+              <button class="btn btn-secondary btn-sm day-tab" data-day="Tuesday">Tuesday</button>
+              <button class="btn btn-secondary btn-sm day-tab" data-day="Wednesday">Wednesday</button>
+              <button class="btn btn-secondary btn-sm day-tab" data-day="Thursday">Thursday</button>
+              <button class="btn btn-secondary btn-sm day-tab" data-day="Friday">Friday</button>
+              <button class="btn btn-secondary btn-sm day-tab" data-day="Saturday">Saturday</button>
+              <button class="btn btn-secondary btn-sm day-tab" data-day="Sunday">Sunday</button>
+            </div>
+          </div>
+
+          <div class="card-body" style="padding: 0;">
+            <div class="table-responsive">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th>Day</th>
+                    <th>Time Slot</th>
+                    <th>Subject</th>
+                    <th>Room / Lab</th>
+                    <th>Instructor</th>
+                    <th style="text-align: right;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="timetableTableBody">
+                  <tr>
+                    <td colspan="6" style="text-align: center; padding: 32px; color: var(--text-muted);">
+                      Loading timetable...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Add/Edit Timetable Slot Modal -->
+  <div id="timetableModal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modalTitle" class="modal-title">Add Timetable Slot</h3>
+        <button id="closeModalBtn" class="modal-close">&times;</button>
+      </div>
+
+      <form id="timetableForm">
+        <div class="modal-body">
+          <input type="hidden" id="slotId">
+
+          <div class="form-group">
+            <label class="form-label" for="subjectName">Subject Name *</label>
+            <input type="text" id="subjectName" class="form-control" placeholder="e.g. Database Management Systems" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="dayOfWeek">Day of the Week *</label>
+            <select id="dayOfWeek" class="form-control" required>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="startTime">Start Time *</label>
+              <input type="time" id="startTime" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="endTime">End Time *</label>
+              <input type="time" id="endTime" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="roomNumber">Room / Hall No.</label>
+              <input type="text" id="roomNumber" class="form-control" placeholder="e.g. Hall 402">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="instructorName">Instructor Name</label>
+              <input type="text" id="instructorName" class="form-control" placeholder="e.g. Prof. Smith">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" id="cancelModalBtn" class="btn btn-secondary">Cancel</button>
+          <button type="submit" id="saveSlotBtn" class="btn btn-primary">Save Slot</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/timetable.js"></script>
+</body>
+</html>

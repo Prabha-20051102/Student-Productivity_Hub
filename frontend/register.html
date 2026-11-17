@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration - Student Productivity Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-body">
+
+  <div class="auth-wrapper" style="max-width: 520px;">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <div class="brand-icon">🎓</div>
+        <h1>Create Student Account</h1>
+        <p>Register to manage your academic productivity</p>
+      </div>
+
+      <!-- Alert Box -->
+      <div id="alertBox" class="alert alert-danger" style="display: none;"></div>
+
+      <form id="registerForm" class="auth-form">
+        <div class="form-group">
+          <label class="form-label" for="name">Full Name *</label>
+          <input 
+            type="text" 
+            id="name" 
+            class="form-control" 
+            placeholder="e.g. Alex Johnson" 
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Student Email Address *</label>
+          <input 
+            type="email" 
+            id="email" 
+            class="form-control" 
+            placeholder="alex@college.edu" 
+            required
+          >
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="department">Department / Major</label>
+            <input 
+              type="text" 
+              id="department" 
+              class="form-control" 
+              placeholder="e.g. Computer Science"
+            >
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="semester">Semester / Year</label>
+            <input 
+              type="text" 
+              id="semester" 
+              class="form-control" 
+              placeholder="e.g. Semester 4"
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="studentId">Student Roll No. / ID (Optional)</label>
+          <input 
+            type="text" 
+            id="studentId" 
+            class="form-control" 
+            placeholder="e.g. CS2026-042"
+          >
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Password * (min 6 characters)</label>
+          <input 
+            type="password" 
+            id="password" 
+            class="form-control" 
+            placeholder="••••••••" 
+            minlength="6" 
+            required
+          >
+        </div>
+
+        <button type="submit" id="registerBtn" class="btn btn-primary auth-btn">
+          Create Account & Sign In
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        Already have an account? 
+        <a href="index.html">Sign In here</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script>
+    redirectIfLoggedIn();
+
+    const registerForm = document.getElementById('registerForm');
+    const alertBox = document.getElementById('alertBox');
+    const registerBtn = document.getElementById('registerBtn');
+
+    registerForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      alertBox.style.display = 'none';
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const department = document.getElementById('department').value.trim();
+      const semester = document.getElementById('semester').value.trim();
+      const studentId = document.getElementById('studentId').value.trim();
+      const password = document.getElementById('password').value;
+
+      registerBtn.disabled = true;
+      registerBtn.textContent = 'Creating account...';
+
+      try {
+        const response = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, department, semester, studentId, password })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+          // Save credentials and redirect directly to dashboard
+          setToken(data.token);
+          setUser(data.user);
+          window.location.href = 'dashboard.html';
+        } else {
+          alertBox.textContent = data.message || 'Registration failed. Please check your inputs.';
+          alertBox.className = 'alert alert-danger';
+          alertBox.style.display = 'block';
+        }
+      } catch (err) {
+        alertBox.textContent = 'Server connection error. Please make sure backend is running.';
+        alertBox.className = 'alert alert-danger';
+        alertBox.style.display = 'block';
+      } finally {
+        registerBtn.disabled = false;
+        registerBtn.textContent = 'Create Account & Sign In';
+      }
+    });
+  </script>
+</body>
+</html>
